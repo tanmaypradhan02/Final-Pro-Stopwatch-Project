@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Final Pro Stopwatch</title>
+
+<!-- Link CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="container">
+    <h1>⏱ Final Pro Stopwatch</h1>
+    <div id="clock"></div>
+
+    <!-- Circular Timer -->
+    <svg width="180" height="180">
+        <circle cx="90" cy="90" r="80" stroke="cyan" stroke-width="6" fill="none" id="circle"/>
+    </svg>
+
+    <div class="time" id="display">00:00:00</div>
+
+    <button class="start" onclick="start()">Start</button>
+    <button class="pause" onclick="pause()">Pause</button>
+    <button class="reset" onclick="reset()">Reset</button>
+    <button class="lap" onclick="lap()">Lap</button>
+    <button class="theme" onclick="toggleTheme()">Dark/Light</button>
+
+    <ul id="laps"></ul>
+    <canvas id="lapChart" width="300" height="180"></canvas>
+</div>
+
+<!-- Link JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>

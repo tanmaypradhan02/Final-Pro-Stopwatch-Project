@@ -1,0 +1,131 @@
+/* BACKGROUND ANIMATION */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #000000);
+    background-size: 400% 400%;
+    animation: bgMove 12s infinite alternate;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* PARTICLES */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* GLASS CARD */
+.container {
+    text-align: center;
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.12);
+    padding: 25px;
+    border-radius: 25px;
+    width: 380px;
+    box-shadow: 0 0 15px cyan;
+    animation: float 4s ease-in-out infinite, glowBox 2s infinite alternate;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes glowBox {
+    from { box-shadow: 0 0 10px cyan; }
+    to { box-shadow: 0 0 25px cyan; }
+}
+
+h1 {
+    font-size: 28px;
+}
+
+#clock {
+    font-size: 16px;
+    color: cyan;
+}
+
+/* TIME DISPLAY */
+.time {
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 10px 0;
+    animation: glowText 1s infinite alternate;
+}
+
+@keyframes glowText {
+    from { text-shadow: 0 0 8px cyan; }
+    to { text-shadow: 0 0 20px cyan; }
+}
+
+/* BUTTONS */
+button {
+    padding: 10px 14px;
+    margin: 4px;
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px white;
+}
+
+.start { background: #00c851; color: white; }
+.pause { background: #ffbb33; color: black; }
+.reset { background: #ff4444; color: white; }
+.lap { background: #33b5e5; color: white; }
+.theme { background: #aa66cc; color: white; }
+
+/* LAP LIST */
+ul {
+    list-style: none;
+    padding: 0;
+    max-height: 120px;
+    overflow-y: auto;
+    font-size: 13px;
+}
+
+li {
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* LIGHT MODE */
+.light {
+    background: white;
+    color: black;
+}
+.light .container {
+    background: white;
+    color: black;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .container{width:90%;}
+    .time{font-size:30px;}
+    button{width:45%;}
+}
